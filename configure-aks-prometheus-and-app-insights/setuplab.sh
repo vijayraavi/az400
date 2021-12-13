@@ -24,7 +24,7 @@ INSTRUMENTATION_KEY=$(az monitor app-insights component show --app $APPINSIGHTS 
 # Connect to Kubernetes Cluster
 az aks get-credentials --name $KUBERNETES -g $RESOURCE_GROUP --admin
 
-# Create Secret with Application Gateway Instrumentation Key
+# Create Secret with Application Insights Instrumentation Key
 kubectl create secret generic appinsightskey --from-literal=instrumentation-key=$INSTRUMENTATION_KEY
 
 # Install NGINX Ingress
